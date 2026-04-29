@@ -243,6 +243,13 @@ impl From<String> for ZString {
     }
 }
 
+impl std::fmt::Write for ZString {
+    fn write_str(&mut self, s: &str) -> std::fmt::Result {
+        self.push(s);
+        Ok(())
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
