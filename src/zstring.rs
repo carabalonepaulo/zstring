@@ -22,6 +22,11 @@ impl ZString {
         }
     }
 
+    pub fn set_fmt(&mut self, args: std::fmt::Arguments) {
+        self.clear();
+        let _ = std::fmt::write(self, args);
+    }
+
     pub fn set(&mut self, value: impl AsRef<str>) {
         let buf = value.as_ref().as_bytes();
         let new_len = buf.len();
