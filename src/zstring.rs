@@ -1,4 +1,4 @@
-#[derive(Debug, PartialEq, Eq, PartialOrd, Ord, Hash)]
+#[derive(Debug, Clone, PartialEq, Eq, PartialOrd, Ord, Hash)]
 pub enum ZString {
     Inline { data: [u8; 30], len: u8 },
     Heap(Vec<u8>),
